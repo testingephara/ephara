@@ -3,12 +3,12 @@ import string
 import re
 from flask import Flask, request
 from pymessenger.bot import Bot
-import os
+
 
 app = Flask(__name__)
-ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+ACCESS_TOKEN = 'EAAf0akYPZBTUBAAHm39OMYFQPNV9aXSBle60AvMZCDYZCCn4p3xBZBt8N1sNzElLRdlWHosZBwUZAsgQuCEOPvMSkmhlIl67RfZBvu1YjyI489nNsn48StEqQlwCKaZANrSCCDFaxJdNCHVCBKJcJb3X01ZBqucbPbP5Qs0UFxaHLuNYs1wn3KHRf'
 VERIFY_TOKEN = 'TESTINGEPHARA'
-bot = Bot(ACCESS_TOKEN)
+bot = Bot('EAAf0akYPZBTUBAAHm39OMYFQPNV9aXSBle60AvMZCDYZCCn4p3xBZBt8N1sNzElLRdlWHosZBwUZAsgQuCEOPvMSkmhlIl67RfZBvu1YjyI489nNsn48StEqQlwCKaZANrSCCDFaxJdNCHVCBKJcJb3X01ZBqucbPbP5Qs0UFxaHLuNYs1wn3KHRf')
 
 #We will receive messages that Facebook sends our bot at this endpoint
 @app.route("/", methods=['GET', 'POST'])
