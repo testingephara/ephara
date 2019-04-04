@@ -53,6 +53,7 @@ def get_message(msg):
     list_input=[]
     list_response=[]
     userinput = msg.lower()
+    list_input.append(userinput)
     if re.search("^hi", userinput):
         response = "hello!"
     elif re.search("^where is", userinput):
@@ -63,17 +64,14 @@ def get_message(msg):
         response = ("www.google.com/maps/search/%s" % location)
     elif re.search("^bye", userinput):
         response = "Have a Good Day!"
+    elif (userinput='chat log'):
+        response=list_input
     else:
         response = "Sorry, I didn't understand what you said"
 
     # return selected item to the user
     return (response)
 
-    list_input.append(userinput)
-    list_response.append(response)
-    f = open('log_input.txt', 'w')
-    simplejson.dump(list_input, f)
-    f.close()
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
     #sends user the text message provided via input response parameter
