@@ -4,6 +4,7 @@ import re
 from flask import Flask, request
 from pymessenger.bot import Bot
 import os 
+import simplejson
 
 app = Flask(__name__)
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
@@ -46,9 +47,11 @@ def verify_fb_token(token_sent):
     return 'Invalid verification token'
 
 
-#chooses a random message to send to the user
+#chooses message to send to the user
 def get_message(msg):
     # write to file here the msg
+    list_input=[]
+    list_response=[]
     userinput = msg.lower()
     if re.search("^hi", userinput):
         response = "hello!"
@@ -66,7 +69,11 @@ def get_message(msg):
     # return selected item to the user
     return (response)
 
-
+    list_input.append(userinput)
+    list_response.append(response)
+    f = open('log_input.txt', 'w')
+    simplejson.dump(list_input, f)
+    f.close()
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
     #sends user the text message provided via input response parameter
