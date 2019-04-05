@@ -3,9 +3,9 @@
 
 
 This bot was built using the following frameworks and libraries
-pymessenger
-Flask
-Google
+  pymessenger
+  Flask
+  Google
 
 Ephara has the following functionalities:
 1. Basic location searching from Google Maps
