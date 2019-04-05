@@ -82,10 +82,8 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("picture of", userinput):
             picture = re.split("picture of ", userinput)
-            responsePic = google_images_download.googleimagesdownload()   #class instantiation
-            arguments = {"keywords":picture[-1],"limit":1,"print_urls":True}   #creating list of arguments
-            paths = responsePic.download(arguments)   #passing the arguments to the function
-            response = paths
+            picture = "+".join(picture[-1].split())
+            response = ("https://www.google.com/search?tbm=isch&q=%s" % picture)
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("^why?$", userinput) or re.search("^why$", userinput):
