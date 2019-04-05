@@ -54,57 +54,56 @@ def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
-        with open("log.txt", 'w') as file:
+        with open("log.txt", 'a+') as file:
             file.write(msg + '\n')        
-        if re.search("^hi", userinput) or re.search("^hello", userinput):
-            response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
-        elif re.search("^where is", userinput):
-            location = re.split("where is ", userinput, 1)
-            print(location)
-            location = "+".join(location[1].split())
-            print(location)
-            response = ("Click the link below!\nwww.google.com/maps/search/%s" % location)
-        elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput) or re.search("what(.*)up", userinput):
-            bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
-            response = random.choice(bot_feeling)
-        elif re.search("^what is", userinput):
-            thing = re.split("what is ", userinput, 1)
-            print(thing)
-            num_page = 1
-            search_results = google.search(thing[1], num_page)
-            response = search_results[0].description
-        elif re.search("^define", userinput):
-            thing = re.split("define ", userinput, 1)
-            print(thing)
-            num_page = 1
-            search_results = google.search(thing[1], num_page)
-            response = search_results[0].description
-        elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
-            response = "Have a Good Day!"
-        elif re.search("^why?$", userinput) or re.search("^why$", userinput):
-            response = "I don't know why..."
-        elif re.search("^why", userinput):
-            num_page = 1
-            search_results = google.search(userinput, num_page)
-            response = search_results[0].description
-        elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
-            response = "I was made by Reza, Eugene, and Joe!"
-        elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput) or re.search("^good$", userinput) or re.search("^great$", userinput):
-            response = "That's great to hear!"
-        elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("(.*)not(.*)good", userinput):
-            response = "I'm sorry to hear about that."         
-        elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
-            bot_rude = ["Please be polite to me :(", "Don't say that T.T", "That's rude!"]
-            response = random.choice(bot_rude)
-        elif re.search("give me a random number", userinput):
-            random_num = randint(0, 100)
-            response = "here is your random number " + str(random_num)  
-        elif re.search("give me the log", userinput):
-            with open("log.txt", 'r') as file:
+            if re.search("^hi", userinput) or re.search("^hello", userinput):
+                response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
+            elif re.search("^where is", userinput):
+                location = re.split("where is ", userinput, 1)
+                print(location)
+                location = "+".join(location[1].split())
+                print(location)
+                response = ("Click the link below!\nwww.google.com/maps/search/%s" % location)
+            elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput) or re.search("what(.*)up", userinput):
+                bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
+                response = random.choice(bot_feeling)
+            elif re.search("^what is", userinput):
+                thing = re.split("what is ", userinput, 1)
+                print(thing)
+                num_page = 1
+                search_results = google.search(thing[1], num_page)
+                response = search_results[0].description
+            elif re.search("^define", userinput):
+                thing = re.split("define ", userinput, 1)
+                print(thing)
+                num_page = 1
+                search_results = google.search(thing[1], num_page)
+                response = search_results[0].description
+            elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
+                response = "Have a Good Day!"
+            elif re.search("^why?$", userinput) or re.search("^why$", userinput):
+                response = "I don't know why..."
+            elif re.search("^why", userinput):
+                num_page = 1
+                search_results = google.search(userinput, num_page)
+                response = search_results[0].description
+            elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
+                response = "I was made by Reza, Eugene, and Joe!"
+            elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput) or re.search("^good$", userinput) or re.search("^great$", userinput):
+                response = "That's great to hear!"
+            elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("(.*)not(.*)good", userinput):
+                response = "I'm sorry to hear about that."         
+            elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
+                bot_rude = ["Please be polite to me :(", "Don't say that T.T", "That's rude!"]
+                response = random.choice(bot_rude)
+            elif re.search("give me a random number", userinput):
+                random_num = randint(0, 100)
+                response = "here is your random number " + str(random_num)  
+            elif re.search("give me the log", userinput):
                 data = file.read
-            response = data              
-        else:
-            response = "Sorry, I didn't understand what you said"
+                response = data              
+            else:
+                response = "Sorry, I didn't understand what you said"
             
     except:
         response = "I don't understand that special symbol"
