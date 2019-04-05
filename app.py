@@ -64,10 +64,16 @@ def get_message(msg):
             location = "+".join(location[1].split())
             print(location)
             response = ("Click the link below!\nwww.google.com/maps/search/%s" % location)
-        elif re.search("^what is", userinput) or re.search("^define", userinput):
-            thing = re.split("what is ", userinput, 2)
+        elif re.search("^what is", userinput):
+            thing = re.split("what is ", userinput, 1)
             print(thing)
-            num_page = 2
+            num_page = 1
+            search_results = google.search(thing[1], num_page)
+            response = search_results[0].description
+        elif re.search("^define", userinput):
+            thing = re.split("define ", userinput, 1)
+            print(thing)
+            num_page = 1
             search_results = google.search(thing[1], num_page)
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
@@ -84,7 +90,7 @@ def get_message(msg):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
-            response = "here is your random number " + str(random_num)
+            response = "here is your random number " + str(random_num) + list[1]
         else:
             response = "Sorry, I didn't understand what you said"
             
