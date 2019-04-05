@@ -53,8 +53,6 @@ def verify_fb_token(token_sent):
 def get_message(msg):
     # write to file here the msg
     try:
-        with open("log.txt", 'w') as file:
-            file.write(msg + '\n')
         if re.search("^hi", userinput) or re.search("^hello", userinput):
             response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
         elif re.search("^where is", userinput):
@@ -97,11 +95,7 @@ def get_message(msg):
             response = random.choice(bot_rude)
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
-            response = "here is your random number " + str(random_num)
-        elif re.search("give me the log", userinput):
-            with open("log.txt", 'r') as file:
-                data = file.read
-            response = data    
+            response = "here is your random number " + str(random_num)  
         else:
             response = "Sorry, I didn't understand what you said"
             
