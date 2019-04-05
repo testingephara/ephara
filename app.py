@@ -3,7 +3,7 @@ import string
 import re
 from flask import Flask, request
 from pymessenger.bot import Bot
-from xgoogle.search import GoogleSearch
+from google import google
 import os 
 
 app = Flask(__name__)
@@ -63,11 +63,9 @@ def get_message(msg):
         elif re.search("^what is", userinput):
             thing = re.split("what is ", userinput, 1)
             print(thing)
-            gs = GoogleSearch(thing[1])
-            gs.results_per_page = 1
-            results = gs.get_results()
-            for res in results:
-                response = res.desc.encode("utf8")
+            num_page = 1
+            search_results = google.search(thing[1], num_page)
+                response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
