@@ -92,10 +92,10 @@ def get_message(msg):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
-            log = []
+            chatlog = []
             for item in mylist:
-                "\n".join([log,item])
-            response = "here is your random number " + str(random_num) + chatLog
+                "\n".join([chatlog,item])
+            response = "here is your random number " + str(random_num) + chatlog
         else:
             response = "Sorry, I didn't understand what you said"
             
