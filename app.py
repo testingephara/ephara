@@ -64,7 +64,7 @@ def get_message(msg):
     elif re.search("^bye", userinput):
         response = "Have a Good Day!"
     elif (userinput='chat log'):
-        response=list_input
+        response=' test log'
     else:
         response = "Sorry, I didn't understand what you said"
 
