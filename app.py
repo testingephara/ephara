@@ -58,7 +58,7 @@ def get_message(msg):
         list.append(userinput)
         var chatLog
         for i in list:
-            chatLog =chatLog + i
+            chatLog += i
         if re.search("^hi", userinput) or re.search("hello", userinput):
             response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
         elif re.search("^where is", userinput):
