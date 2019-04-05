@@ -71,11 +71,12 @@ def get_message(msg):
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
             response = "Please be polite to me :("
         else:
-            response = "Sorry, I didn't understand what you said"
+            response = "Sorry, I didn't understand what you said" + output
+            
     except:
         response = "I don't understand that special symbol"
     # return selected item to the user
-    return (response + output)
+    return (response)
 
     
 #uses PyMessenger to send response to user
