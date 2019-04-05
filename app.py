@@ -3,7 +3,7 @@ import string
 import re
 from flask import Flask, request
 from pymessenger.bot import Bot
-# from googlesearch.googlesearch import GoogleSearch
+from googlesearch import search
 import os 
 
 app = Flask(__name__)
@@ -59,11 +59,11 @@ def get_message(msg):
         location = "+".join(location[1].split())
         print(location)
         response = ("www.google.com/maps/search/%s" % location)
-#     elif re.search("^what is", userinput):
-#         thing = re.split("where is ", userinput, 1)
-#         print(thing)
-#         result = GoogleSearch().search(thing[1])
-#         response = result[0].results.getText()
+    elif re.search("^what is", userinput):
+        thing = re.split("where is ", userinput, 1)
+        print(thing)
+        searchResult = search(thing, stop=1)
+        response = searchResult[0]
     elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
         response = "Have a Good Day!"
     elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
