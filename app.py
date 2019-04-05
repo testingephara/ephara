@@ -50,14 +50,13 @@ def verify_fb_token(token_sent):
 
 
 mylist=[]
-
+logtext=''
 #chooses message to send to the user
 def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
         mylist.append(userinput)
-        logtext=''
         for i in mylist:
             logtext += i
         if re.search("^hi", userinput) or re.search("hello", userinput):
