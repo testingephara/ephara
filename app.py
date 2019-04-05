@@ -5,6 +5,7 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 from google import google
 import os
+import random
 from random import randint
 
 app = Flask(__name__)
@@ -73,9 +74,9 @@ def get_message(msg):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
             random_num= randint(0, 100)
-            response = "here is your random number" + str(random_num)
+            response = "here is your random number" + random_num
         else:
-            response = "Sorry, I didn't understand what you said" + output
+            response = "Sorry, I didn't understand what you said" + ' ' + output
             
     except:
         response = "I don't understand that special symbol"
