@@ -65,7 +65,7 @@ def get_message(msg):
             print(thing)
             num_page = 1
             search_results = google.search(thing[1], num_page)
-                response = search_results[0].description
+            response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
