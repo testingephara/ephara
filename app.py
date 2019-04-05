@@ -70,7 +70,7 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
-        elif re.search("how are you", userinput) or re.search("how's it going", userinput):
+        elif re.search("how are you", userinput) or re.search("how(.?*)going", userinput):
             response = "I'm doing quite fine!"
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
