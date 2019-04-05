@@ -50,7 +50,10 @@ def verify_fb_token(token_sent):
 #chooses message to send to the user
 def get_message(msg):
     # write to file here the msg
-    userinput = msg.lower()
+    try:
+        userinput = msg.lower()
+    catch:
+        response = "I don't understand that special symbol"
     if re.search("^hi", userinput):
         response = "hello!"
     elif re.search("^where is", userinput):
