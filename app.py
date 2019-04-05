@@ -4,7 +4,9 @@ import re
 from flask import Flask, request
 from pymessenger.bot import Bot
 from google import google
-import os 
+import os
+import math
+import numpy as np
 
 app = Flask(__name__)
 ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
@@ -71,8 +73,8 @@ def get_message(msg):
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
-            random_num= random.randint(1, 10)
-            resonse = "here is your random number" + str(random_num)
+            random_num= np.random.randint(10, size=1)
+            resonse = ("here is your random number" + str(random_num))
         else:
             response = "Sorry, I didn't understand what you said" + output
             
