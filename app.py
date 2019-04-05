@@ -55,7 +55,7 @@ def get_message(msg):
     try:
         userinput = msg.lower()
         mylist=[]
-        mylist.append(output)
+        mylist.append(userinput)
         logtext=''
         for i in mylist:
             logtext += i
@@ -103,7 +103,7 @@ def get_message(msg):
         response = "I don't understand that special symbol"
         
     # return selected item to the user
-    return (response + output)
+    return (response + logtext)
 
     
 #uses PyMessenger to send response to user
