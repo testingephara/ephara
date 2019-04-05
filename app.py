@@ -75,11 +75,11 @@ def get_message(msg):
             response = google.calculate(calc[-1])
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
-        elif re.search("how are you", userinput) or re.search("how(.*)going", userinput):
+        elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput):
             response = "I'm doing quite fine!"
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
-        elif re.search("i'm good", userinput) or re.search("i'm happy", userinput) or re.search("i am good", userinput) or re.search("i am happy", userinput):
+        elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput):
             response = "That's great to hear!"
         elif re.search("i am sad", userinput) or re.search("i'm sad", userinput) or re.search("i don't feel good", userinput) or re.search("i feel bad", userinput):
             response = "I'm sorry to hear about that."         
