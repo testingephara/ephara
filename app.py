@@ -86,6 +86,10 @@ def get_message(msg):
             response = random.choice(bot_feeling)
         elif re.search("^why?$", userinput) or re.search("^why$", userinput):
             response = "I don't know why..."
+        elif re.search("^why", userinput):
+            num_page = 1
+            search_results = google.search(userinput, num_page)
+            response = search_results[0].description
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
         elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput):
