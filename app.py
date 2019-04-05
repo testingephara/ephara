@@ -56,6 +56,9 @@ def get_message(msg):
         userinput = msg.lower()
         list=[]
         list.append(userinput)
+        var chatLog
+        for i in list:
+            chatLog =chatLog + i
         if re.search("^hi", userinput) or re.search("hello", userinput):
             response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
         elif re.search("^where is", userinput):
@@ -90,7 +93,7 @@ def get_message(msg):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
-            response = "here is your random number " + str(random_num) + list[1]
+            response = "here is your random number " + str(random_num) + chatLog
         else:
             response = "Sorry, I didn't understand what you said"
             
