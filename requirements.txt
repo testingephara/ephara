@@ -2,4 +2,4 @@ Flask==0.12.2
 pymessenger==0.0.7.0
 google-search
 gunicorn==19.6.0
-urllib2
+urllib3
