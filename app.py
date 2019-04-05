@@ -49,12 +49,12 @@ def verify_fb_token(token_sent):
     return 'Invalid verification token'
 
 
-mylist=[]
-logtext=''
 #chooses message to send to the user
 def get_message(msg):
     # write to file here the msg
     try:
+        mylist=[]
+        logtext=''
         userinput = msg.lower()
         mylist.append(userinput)
         for i in mylist:
