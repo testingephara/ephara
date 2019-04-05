@@ -102,7 +102,7 @@ def get_message(msg):
             bot_rude = ["Please be polite to me :(", "Don't say that T.T", "That's rude!"]
             response = random.choice(bot_rude)
         elif re.search("mehdi", userinput):
-            bot_mehdi = ["Mehdi rocks", "Mehdi means Saviour !", "https://vignette.wikia.nocookie.net/es.starwars/images/d/df/Masterobiwan.jpg/revision/latest?cb=20170507150652", "I <3 Mehdi, so do you..."]
+            bot_mehdi = ["Mehdi rocks", "Mehdi means the guide !", "https://vignette.wikia.nocookie.net/es.starwars/images/d/df/Masterobiwan.jpg/revision/latest?cb=20170507150652", "I <3 Mehdi, so do you..."]
             response = random.choice(bot_mehdi)            
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
