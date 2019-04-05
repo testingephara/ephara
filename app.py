@@ -1,4 +1,5 @@
 #Python libraries that we need to import for our bot
+from urllib.request import urlopen
 import string
 import re
 from flask import Flask, request
