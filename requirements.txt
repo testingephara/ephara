@@ -3,5 +3,6 @@ pymessenger==0.0.7.0
 gunicorn==19.7.1
 google==2.0.2
 git+git://github.com/abenassi/Google-Search-API.git
+git+git://github.com/hardikvasa/google-images-download.git
 requests
 fake-useragent
