@@ -81,7 +81,7 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
-        elif re.search("how(.*)you.", userinput) or re.search("how(.*)going.", userinput):
+        elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput):
             bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
             response = random.choice(bot_feeling)
         elif re.search("^why?$", userinput) or re.search("^why$", userinput):
