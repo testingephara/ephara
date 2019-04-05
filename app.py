@@ -56,7 +56,7 @@ def get_message(msg):
         userinput = msg.lower()
         list=[]
         list.append(userinput)
-        var chatLog
+        chatLog
         for i in list:
             chatLog += i
         if re.search("^hi", userinput) or re.search("hello", userinput):
