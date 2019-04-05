@@ -57,6 +57,7 @@ def get_message(msg):
     try:
         userinput = msg.lower()
         mylist.append(userinput)
+        logtext=''
         for i in mylist:
             logtext += i
         if re.search("^hi", userinput) or re.search("hello", userinput):
