@@ -13,10 +13,6 @@ ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 bot = Bot(ACCESS_TOKEN)
 
-
-logtext=''
-
-
 #We will receive messages that Facebook sends our bot at this endpoint
 @app.route("/", methods=['GET', 'POST'])
 def receive_message():
@@ -53,12 +49,14 @@ def verify_fb_token(token_sent):
     return 'Invalid verification token'
 
 
+mylist=[]
+logtext=''
+
 #chooses message to send to the user
 def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
-        mylist=[]
         mylist.append(userinput)
         for i in mylist:
             logtext += i
@@ -85,7 +83,10 @@ def get_message(msg):
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput):
-            response = "I'm doing quite fine! How are you?"
+            bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
+            response = random.choice(bot_feeling)
+        elif re.search("^why?$", userinput) or re.search("^why$", userinput):
+            response = "I don't know why..."
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
         elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput):
