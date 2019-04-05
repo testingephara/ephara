@@ -90,8 +90,10 @@ def get_message(msg):
         elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput) or re.search("^good$", userinput) or re.search("^great$", userinput):
             response = "That's great to hear!"
         elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("(.*)not(.*)good", userinput):
-            response = "I'm sorry to hear about that."         
-        elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
+            response = "I'm sorry to hear about that."
+        elif re.search("how many f(.*)cks", userinput):
+            response = "0"            
+        elif re.search("f(.*)k", userinput) or re.search("sh(.*)t", userinput) or re.search("b(.*)ch", userinput):
             bot_rude = ["Please be polite to me :(", "Don't say that T.T", "That's rude!"]
             response = random.choice(bot_rude)
         elif re.search("give me a random number", userinput):
