@@ -59,7 +59,7 @@ def get_message(msg):
         mylist.append(userinput)
         for i in mylist:
             logtext += i
-        if re.search("^hi", userinput) or re.search("hello", userinput):
+        if re.search("^hi", userinput) or re.search("^hello", userinput):
             response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
         elif re.search("^where is", userinput):
             location = re.split("where is ", userinput, 1)
@@ -81,7 +81,7 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
-        elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput):
+        elif re.search("how(.*)you[]", userinput) or re.search("how(.*)going[]", userinput):
             bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
             response = random.choice(bot_feeling)
         elif re.search("^why?$", userinput) or re.search("^why$", userinput):
@@ -92,12 +92,13 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
-        elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput):
+        elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput) or re.search("^good$", userinput) or re.search("^great$", userinput):
             response = "That's great to hear!"
-        elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("i(.*)not(.*)good", userinput):
+        elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("(.*)not(.*)good", userinput):
             response = "I'm sorry to hear about that."         
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
-            response = "Please be polite to me :("
+            bot_rude = ["Please be polite to me :(", "Don't say that T.T", "That's rude!"]
+            response = random.choice(bot_rude)
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
             response = "here is your random number " + str(random_num)
