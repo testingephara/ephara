@@ -63,8 +63,12 @@ def get_message(msg):
         elif re.search("^what is", userinput):
             thing = re.split("what is ", userinput, 1)
             print(thing)
-            for url in search(thing[1], stop=2):
-                response = url
+            thing[1]
+            gs = GoogleSearch("quick and dirty")
+            gs.results_per_page = 1
+            results = gs.get_results()
+            for res in results:
+                response = res.desc.encode("utf8")
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
