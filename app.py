@@ -59,13 +59,15 @@ def get_message(msg):
         location = "+".join(location[1].split())
         print(location)
         response = ("www.google.com/maps/search/%s" % location)
-#     elif re.search("^what is", userinput):
-#         thing = re.split("where is ", userinput, 1)
-#         print(thing)
-#         result = GoogleSearch().search(thing[1])
-#         response = result[0].results.getText()
-    elif re.search("^bye", userinput):
+    elif re.search("^what is", userinput):
+        thing = re.split("where is ", userinput, 1)
+        print(thing)
+        result = GoogleSearch().search(thing[1])
+        response = result[0].results.getText()
+    elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
         response = "Have a Good Day!"
+    elif re.search(".fuck.", userinput) or re.search(".shit.", userinput) or re.search(".bitch.", userinput):
+        response = "Please be polite to me :("
     else:
         response = "Sorry, I didn't understand what you said"
 
