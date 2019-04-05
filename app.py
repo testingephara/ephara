@@ -90,6 +90,7 @@ def get_message(msg):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
+            logtext
             for i in mylist:
                 i = logtext
             response = "here is your random number " + str(random_num) + logtext
