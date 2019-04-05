@@ -63,7 +63,7 @@ def get_message(msg):
             print(location)
             location = "+".join(location[1].split())
             print(location)
-            response = ("www.google.com/maps/search/%s" % location)
+            response = ("Click the link below!\nwww.google.com/maps/search/%s" % location)
         elif re.search("^what is", userinput) or re.search("^define", userinput):
             thing = re.split("what is ", userinput, 1)
             print(thing)
