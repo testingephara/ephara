@@ -62,7 +62,7 @@ def get_message(msg):
     elif re.search("^what is", userinput):
         thing = re.split("what is ", userinput, 1)
         print(thing)
-        for url in search(thing[0], stop=1):
+        for url in search(thing[1], stop=2):
             response = url
     elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
         response = "Have a Good Day!"
