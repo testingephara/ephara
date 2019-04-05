@@ -3,7 +3,7 @@ import string
 import re
 from flask import Flask, request
 from pymessenger.bot import Bot
-from googlesearch import search
+from xgoogle.search import GoogleSearch
 import os 
 
 app = Flask(__name__)
