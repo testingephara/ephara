@@ -50,7 +50,6 @@ def verify_fb_token(token_sent):
 
 
 mylist=[]
-logtext=''
 
 #chooses message to send to the user
 def get_message(msg):
