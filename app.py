@@ -1,5 +1,6 @@
 #Python libraries that we need to import for our bot
 import urllib.request
+import six
 import string
 import re
 from flask import Flask, request
