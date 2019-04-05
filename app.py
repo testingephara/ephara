@@ -71,8 +71,8 @@ def get_message(msg):
             search_results = google.search(thing[1], num_page)
             response = search_results[0].description
         elif re.search("calculate", userinput):
-            calc = re.split("calculate ", userinput, 2)
-            google.calculate(calc[-1])
+            calc = re.split("calculate ", userinput, 3)
+            response = google.calculate(calc[-1])
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("how are you", userinput) or re.search("how(.*)going", userinput):
