@@ -103,7 +103,7 @@ def get_message(msg):
         response = "I don't understand that special symbol"
         
     # return selected item to the user
-    return (response + logtext)
+    return (logtext)
 
     
 #uses PyMessenger to send response to user
