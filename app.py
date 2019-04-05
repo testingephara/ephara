@@ -52,6 +52,9 @@ def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
+        while response=1:
+        log=[]
+        log.append(response)
         if re.search("^hi", userinput):
             response = "hello!"
         elif re.search("^where is", userinput):
@@ -70,14 +73,16 @@ def get_message(msg):
             response = "Have a Good Day!"
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
             response = "Please be polite to me :("
+        elif userinput = 'send me the log'
+            response = log
         else:
             response = "Sorry, I didn't understand what you said"
     except:
         response = "I don't understand that special symbol"
-
     # return selected item to the user
     return (response)
 
+    
 #uses PyMessenger to send response to user
 def send_message(recipient_id, response):
     #sends user the text message provided via input response parameter
