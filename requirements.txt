@@ -1,5 +1,3 @@
 Flask==0.12.2
 pymessenger==0.0.7.0
-google-search
 gunicorn==19.7.1
-six==1.12.0
