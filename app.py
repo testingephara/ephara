@@ -66,7 +66,7 @@ def get_message(msg):
 #         response = result[0].results.getText()
     elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
         response = "Have a Good Day!"
-    elif re.search(".fuck.", userinput) or re.search(".shit.", userinput) or re.search(".bitch.", userinput):
+    elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
         response = "Please be polite to me :("
     else:
         response = "Sorry, I didn't understand what you said"
