@@ -58,6 +58,11 @@ def get_message(msg):
         location = "+".join(location[1].split())
         print(location)
         response = ("www.google.com/maps/search/%s" % location)
+    elif re.search("^what is", userinput):
+        thing = re.split("where is ", userinput, 1)
+        print(thing)
+        search_results = google.search(thing, 1)
+        response = search_results[0].description
     elif re.search("^bye", userinput):
         response = "Have a Good Day!"
     else:
