@@ -95,8 +95,8 @@ def get_message(msg):
             bot_rude = ["Please be polite to me :(", "Don't say that T.T", "That's rude!"]
             response = random.choice(bot_rude)
         elif re.search("mehdi", userinput):
-            bot_rude = ["Mehdi rocks", "Mehdi means Saviour ! https://media.giphy.com/media/4kUcosFCMovjG/giphy.gif", "I <3 Mehdi, so do you...", ""]
-            response = random.choice(bot_rude)            
+            bot_mehdi = ["Mehdi rocks", "Mehdi means Saviour ! https://media.giphy.com/media/4kUcosFCMovjG/giphy.gif", "I <3 Mehdi, so do you..."]
+            response = random.choice(bot_mehdi)            
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
             response = "here is your random number " + str(random_num)              
