@@ -61,6 +61,9 @@ def get_message(msg):
             location = "+".join(location[1].split())
             print(location)
             response = ("Click the link below!\nwww.google.com/maps/search/%s" % location)
+        elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput) or re.search("what(.*)up", userinput):
+            bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
+            response = random.choice(bot_feeling)
         elif re.search("^what is", userinput):
             thing = re.split("what is ", userinput, 1)
             print(thing)
@@ -75,9 +78,6 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
-        elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput):
-            bot_feeling = ["I'm doing quite fine! How are you?", "I am doing alright. You?", "I'm having a terrible day. How's yours?"]
-            response = random.choice(bot_feeling)
         elif re.search("^why?$", userinput) or re.search("^why$", userinput):
             response = "I don't know why..."
         elif re.search("^why", userinput):
