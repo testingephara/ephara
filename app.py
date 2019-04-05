@@ -54,6 +54,9 @@ def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
+        while userinput = true:
+            list=[]
+            list.append(userinput)
         if re.search("^hi", userinput) or re.search("hello", userinput):
             response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
         elif re.search("^where is", userinput):
@@ -70,7 +73,7 @@ def get_message(msg):
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
-        elif re.search("how are you", userinput) or re.search("how is it", userinput) or re.search("how's it", userinput):
+        elif re.search("how are you", userinput) or re.search("how's it going", userinput):
             response = "I'm doing quite fine!"
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
@@ -83,6 +86,8 @@ def get_message(msg):
         elif re.search("give me a random number", userinput):
             random_num = randint(0, 100)
             response = "here is your random number" + str(random_num)
+        elif re.search("log please", userinput):
+            response = list[1]
         else:
             response = "Sorry, I didn't understand what you said"
             
