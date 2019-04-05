@@ -82,10 +82,10 @@ def get_message(msg):
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
         elif re.search("how(.*)you", userinput) or re.search("how(.*)going", userinput):
-            response = "I'm doing quite fine!"
+            response = "I'm doing quite fine! How are you?"
         elif re.search("your creator", userinput) or re.search("your maker", userinput) or re.search("made you", userinput):
             response = "I was made by Reza, Eugene, and Joe!"
-        elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput):
+        elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput) or re.search("i(.*)great", userinput):
             response = "That's great to hear!"
         elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("i(.*)not(.*)good", userinput):
             response = "I'm sorry to hear about that."         
@@ -103,7 +103,7 @@ def get_message(msg):
         response = "I don't understand that special symbol"
         
     # return selected item to the user
-    return (response + logtext)
+    return (response)
 
     
 #uses PyMessenger to send response to user
