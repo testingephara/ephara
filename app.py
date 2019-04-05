@@ -52,7 +52,7 @@ def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
-    catch:
+    except:
         response = "I don't understand that special symbol"
     if re.search("^hi", userinput):
         response = "hello!"
