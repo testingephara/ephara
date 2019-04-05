@@ -25,4 +25,4 @@ https://www.twilio.com/blog/2018/02/facebook-messenger-bot-heroku-python-flask.h
 https://github.com/abenassi/Google-Search-API#installation
 <br/>
 
-courtesy of William Essilfie, Agustín Benassi
+courtesy of William Essilfie @wessilfie, Agustín Benassi @abenassi
