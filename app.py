@@ -81,7 +81,7 @@ def get_message(msg):
             response = "I was made by Reza, Eugene, and Joe!"
         elif re.search("i(.*)good", userinput) or re.search("i(.*)happy", userinput):
             response = "That's great to hear!"
-        elif re.search("i am sad", userinput) or re.search("i'm sad", userinput) or re.search("i don't feel good", userinput) or re.search("i feel bad", userinput):
+        elif re.search("i(.*)sad", userinput) or re.search("i(.*)don't(.*)good", userinput) or re.search("i(.*)not(.*)good", userinput):
             response = "I'm sorry to hear about that."         
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
             response = "Please be polite to me :("
