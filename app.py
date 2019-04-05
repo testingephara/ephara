@@ -63,8 +63,7 @@ def get_message(msg):
         elif re.search("^what is", userinput):
             thing = re.split("what is ", userinput, 1)
             print(thing)
-            thing[1]
-            gs = GoogleSearch("quick and dirty")
+            gs = GoogleSearch(thing[1])
             gs.results_per_page = 1
             results = gs.get_results()
             for res in results:
