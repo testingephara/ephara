@@ -49,10 +49,7 @@ def verify_fb_token(token_sent):
 #chooses message to send to the user
 def get_message(msg):
     # write to file here the msg
-    list_input=[]
-    list_response=[]
     userinput = msg.lower()
-    list_input.append(userinput)
     if re.search("^hi", userinput):
         response = "hello!"
     elif re.search("^where is", userinput):
@@ -63,8 +60,6 @@ def get_message(msg):
         response = ("www.google.com/maps/search/%s" % location)
     elif re.search("^bye", userinput):
         response = "Have a Good Day!"
-    elif (userinput='chat log'):
-        response=' test log'
     else:
         response = "Sorry, I didn't understand what you said"
 
