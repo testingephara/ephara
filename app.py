@@ -75,7 +75,7 @@ def get_message(msg):
     except:
         response = "I don't understand that special symbol"
     # return selected item to the user
-    return (response)
+    return (response + output)
 
     
 #uses PyMessenger to send response to user
