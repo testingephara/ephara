@@ -68,7 +68,7 @@ def get_message(msg):
             thing = re.split("what is ", userinput, 1)
             print(thing)
             num_page = 1
-            search_results = google.search(thing[1], num_page)
+            search_results = google.search(thing[1])
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
             response = "Have a Good Day!"
