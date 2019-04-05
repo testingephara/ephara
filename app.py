@@ -72,7 +72,7 @@ def get_message(msg):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
             random_num= random.randint(1, 10)
-            resonse = "here is your random number" + random_num
+            resonse = "here is your random number" + str(random_num)
         else:
             response = "Sorry, I didn't understand what you said" + output
             
