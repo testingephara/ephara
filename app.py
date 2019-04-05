@@ -52,27 +52,27 @@ def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
+        if re.search("^hi", userinput):
+            response = "hello!"
+        elif re.search("^where is", userinput):
+            location = re.split("where is ", userinput, 1)
+            print(location)
+            location = "+".join(location[1].split())
+            print(location)
+            response = ("www.google.com/maps/search/%s" % location)
+        elif re.search("^what is", userinput):
+            thing = re.split("what is ", userinput, 1)
+            print(thing)
+            for url in search(thing[1], stop=2):
+                response = url
+        elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
+            response = "Have a Good Day!"
+        elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
+            response = "Please be polite to me :("
+        else:
+            response = "Sorry, I didn't understand what you said"
     except:
         response = "I don't understand that special symbol"
-    if re.search("^hi", userinput):
-        response = "hello!"
-    elif re.search("^where is", userinput):
-        location = re.split("where is ", userinput, 1)
-        print(location)
-        location = "+".join(location[1].split())
-        print(location)
-        response = ("www.google.com/maps/search/%s" % location)
-    elif re.search("^what is", userinput):
-        thing = re.split("what is ", userinput, 1)
-        print(thing)
-        for url in search(thing[1], stop=2):
-            response = url
-    elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
-        response = "Have a Good Day!"
-    elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
-        response = "Please be polite to me :("
-    else:
-        response = "Sorry, I didn't understand what you said"
 
     # return selected item to the user
     return (response)
