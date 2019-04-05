@@ -13,6 +13,10 @@ ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
 VERIFY_TOKEN = os.environ['VERIFY_TOKEN']
 bot = Bot(ACCESS_TOKEN)
 
+
+logtext=''
+
+
 #We will receive messages that Facebook sends our bot at this endpoint
 @app.route("/", methods=['GET', 'POST'])
 def receive_message():
@@ -56,7 +60,6 @@ def get_message(msg):
         userinput = msg.lower()
         mylist=[]
         mylist.append(userinput)
-        logtext=''
         for i in mylist:
             logtext += i
         if re.search("^hi", userinput) or re.search("hello", userinput):
