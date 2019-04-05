@@ -52,8 +52,8 @@ def get_message(msg):
     # write to file here the msg
     try:
         userinput = msg.lower()
-        if re.search("^hi", userinput):
-            response = "hello!"
+        if re.search("^hi", userinput) or re.search("hello", userinput):
+            response = "hello, I am Ephara! I can give you directions and basic information about any topic!"
         elif re.search("^where is", userinput):
             location = re.split("where is ", userinput, 1)
             print(location)
@@ -67,9 +67,12 @@ def get_message(msg):
             search_results = google.search(thing[1], num_page)
             response = search_results[0].description
         elif re.search("^bye", userinput) or re.search("^goodbye", userinput):
-            response = "Have a Good Day!"
+            response = "Have a Good Day!"    
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
             response = "Please be polite to me :("
+        elif re.search("give me a random number", userinput):
+            random_num= random.randint(1, 10)
+            resonse = "here is your random number" + random_num
         else:
             response = "Sorry, I didn't understand what you said" + output
             
