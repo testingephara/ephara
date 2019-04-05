@@ -81,7 +81,7 @@ def get_message(msg):
         elif re.search("fuck", userinput) or re.search("shit", userinput) or re.search("bitch", userinput):
             response = "Please be polite to me :("
         elif re.search("give me a random number", userinput):
-            random_num= randint(0, 100)
+            random_num = randint(0, 100)
             response = "here is your random number" + random_num 
         else:
             response = "Sorry, I didn't understand what you said"
